@@ -24,8 +24,8 @@ public class EntityMovementRepositoryIntTest {
                 .nearByEntities("location", 5.0);
 
         // Then
-        assertEquals(entityMovements.get(0), new EntityMovement(1L, "A", 1));
-        assertEquals(entityMovements.get(1), new EntityMovement(2L, "B", 3));
-        assertEquals(entityMovements.get(2), new EntityMovement(3L, "C", 2));
+        assertEquals(entityMovements.get(0), new EntityMovement(1L, "New York", 1));
+        assertEquals(entityMovements.get(1), new EntityMovement(2L, "Zurich", 3));
+        assertEquals(entityMovements.get(2), new EntityMovement(3L, "San Francisco", 2));
     }
 }
