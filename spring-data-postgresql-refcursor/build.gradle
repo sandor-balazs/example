@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        gradlePluginVersion = '1.5.8.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${gradlePluginVersion}")
+    }
+}
+
+group 'com.github.sandor-balazs.poc-postgresql-spring-data-refcursor'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    lombokVersion = '1.16.16'
+    springBootVersion = '1.5.8.RELEASE'
+    postgreSqlVersion = '42.1.4'
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+
+    runtime "org.postgresql:postgresql:${postgreSqlVersion}"
+}
+
